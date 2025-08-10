@@ -11,6 +11,8 @@ const methodOverride = require('method-override');
 var cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
+const PORT = process.env.PORT || 8080;
+
 
 
 
@@ -53,7 +55,7 @@ app.get("/listings",async (req,res)=>{
 })
 
 
-app.use(cors({ origin: "https://your-frontend.vercel.app", credentials: true }));
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 
 
@@ -305,7 +307,7 @@ app.get("/:value", async (req, res) => {
 
 
 //Start server
-app.listen(8080, () => {
+app.listen(PORT, () => {
     console.log('server listening on port 8080')
 });
 
