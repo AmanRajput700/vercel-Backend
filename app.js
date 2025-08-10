@@ -38,6 +38,12 @@ app.use(session({
   }
 }));
 
+app.use(cors({
+  origin: ["https://vercel-frontend-zxrl.vercel.app"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 //connect to database
 connectDB();
 
@@ -55,7 +61,7 @@ app.get("/listings",async (req,res)=>{
 })
 
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+
 
 
 
