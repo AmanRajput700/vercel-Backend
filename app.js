@@ -53,6 +53,7 @@ app.get("/listings",async (req,res)=>{
 })
 
 
+app.use(cors({ origin: "https://your-frontend.vercel.app", credentials: true }));
 
 
 
